@@ -1,0 +1,608 @@
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.1.0/material.min.js"></script>
+  <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.7/docs.css'>
+  <link rel='stylesheet prefetch' href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.7/angular-material.css'>
+<link href="https://storage.googleapis.com/code.getmdl.io/1.1.0/material.indigo-pink.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" href="css/style.css">
+    <style>
+  </style>
+</head>
+<body background="pattern.jpg">
+<div layout="row" layout-padding="" layout-wrap="" layout-fill="" ng-cloak="" class="whiteframedemoDirectiveAttributeUsage" ng-app="MyApp">
+<div class="padded" md-whiteframe="24" flex-sm="45" flex-gt-sm="35" flex-gt-md="70" layout="center center" layout-align="center center">
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+		<md-tab label="" ng-disabled="true">
+        <md-content class="md-padding">
+		</md-content>
+		</md-tab>
+		
+		<md-tab md-active="true" label="Donate Blood">
+        <md-content  class="md-padding">
+  
+<div class="mdl-tabs vertical-mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-grid mdl-grid--no-spacing">
+      <div class="mdl-cell mdl-cell--3-col">
+          <div class="mdl-tabs__tab-bar">
+             <span class="mdl-tabs__tab">
+                 <span class="hollow-circle"></span>
+                  Search By:
+             </span>
+			 <a href="#tab1-panel" class="mdl-tabs__tab is-active">
+                 <span class="hollow-circle"></span>
+                  Blood Group
+             </a>
+             <a href="#tab2-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  Location
+              </a>
+              <a href="#tab3-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  Blood Quality
+              </a>
+              <a href="#tab4-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  Age Group
+              </a>
+              <a href="#tab5-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  User ID
+              </a>
+              <a href="#tab6-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  Name
+              </a>
+         </div>
+       </div>
+	    <div class="mdl-cell mdl-cell--1-col">
+		</div>
+       <div class="mdl-cell mdl-cell--7-col">
+            <div class="mdl-tabs__panel is-active" id="tab1-panel" layout-sm="column" layout-align="center center" layout-wrap>
+				<md-input-container style="margin-right: 10px;">
+					<label>Select Blood Group</label>
+					<md-select ng-model="bloodgroup">
+					<md-option>Select</md-option>
+					<md-option value="A+">A+</md-option>
+					<md-option value="A-">A-</md-option>
+					<md-option value="B+">B+</md-option>
+					<md-option value="B-">B-</md-option>
+					<md-option value="O+">O+</md-option>
+					<md-option value="O-">O-</md-option>
+					<md-option value="AB+">AB+</md-option>
+					<md-option value="AB-">AB-</md-option>
+					</md-select>
+				</md-input-container>
+				 <div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+					</div>	
+            </div>
+            <div class="mdl-tabs__panel" id="tab2-panel">
+                  <div layout="row">
+					<div flex-gt-sm="100" flex="200">
+						<img src="img.jpg" width="100%">			
+					</div>
+					<div flex-gt-sm="10" flex="4">
+					</div>
+					<div flex-gt-sm="2" flex="2">
+						 <md-divider class="vertical-divider"></md-divider>
+					</div>
+					<div flex-gt-sm="10" flex="4">
+					</div>
+					<div flex-gt-sm="100" flex="66">
+					<form name="locationForm">
+  <md-input-container>
+     <label>Blood Group</label>
+        <md-select name="lbloodgroup" ng-model="lbloodgroup" required>
+          <md-option disabled>Select</md-option>
+		  <md-option value="red">A</md-option>
+          <md-option value="blue">B</md-option>
+          <md-option value="green">C</md-option>
+        </md-select>
+        <div ng-messages="locationForm.bloodgroup.$error">
+      <div ng-message="required">Blood Group is required!</div>
+    </div>
+	 </md-input-container>
+  <md-input-container>
+     <label>Country</label>
+        <md-select name="country" ng-model="country" required>
+          <md-option disabled>Select</md-option>
+		  <md-option value="red">A</md-option>
+          <md-option value="blue">B</md-option>
+          <md-option value="green">C</md-option>
+        </md-select>
+        <div ng-messages="locationForm.country.$error">
+      <div ng-message="required">Country is required!</div>
+    </div>
+	 </md-input-container>
+	  <md-input-container>
+	<label>State</label>
+        <md-select name="state" ng-model="state" required>
+          <md-option disabled>Select</md-option>
+		  <md-option value="red">A</md-option>
+          <md-option value="blue">B</md-option>
+          <md-option value="green">C</md-option>
+        </md-select>  <div ng-messages="locationForm.state.$error">
+      <div ng-message="required">State is required!</div>
+    </div>
+	 </md-input-container>
+	  <md-input-container>
+							 <label>City</label>
+        <md-select name="city" ng-model="city" required>
+          <md-option disabled>Select</md-option>
+		  <md-option value="red">A</md-option>
+          <md-option value="blue">B</md-option>
+          <md-option value="green">C</md-option>
+        </md-select>  <div ng-messages="locationForm.city.$error">
+      <div ng-message="required">City is required!</div>
+    </div>
+	 </md-input-container>
+								<div layout="row" layout-align="end" flex>
+      <md-button ng-click="save()" class="md-raised">Search</md-button>
+    </div>
+						</form>
+					</div>
+				</div>
+            </div>
+            <div class="mdl-tabs__panel" id="tab3-panel">
+	  <div ng-controller="SelectHeaderController" class="md-padding" ng-cloak>
+  <div>
+     <div layout="row">
+      <md-input-container>
+		<md-checkbox ng-model="isAntiOxi" aria-label="Anti-Oxidants">
+  Anti-Oxidants
+</md-checkbox>	
+		<md-checkbox ng-model="isPlate" aria-label="Platelets">
+  Platelets
+</md-checkbox>	
+		<md-checkbox ng-model="isOther" aria-label="Other">
+  Other
+</md-checkbox>	
+      </md-input-container>
+ </div>
+ <div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+ </div>
+</div>
+</div>
+</div>
+            <div class="mdl-tabs__panel" id="tab4-panel">
+			<center>
+      <md-input-container style="width: 60%;">
+        <label>Age</label>
+        <md-select ng-model="age">
+					<md-option ng-disabled="true">Select</md-option>
+					<md-option value="18-27">18 - 27</md-option>
+					<md-option value="28-37">28 - 37</md-option>
+					<md-option value="38-47">38 - 47</md-option>
+					<md-option value="48-57">48 - 57</md-option>
+					<md-option value="58-67">58 - 67</md-option>
+					<md-option value="68-77">68 - 77</md-option>
+					<md-option value="78-87">78 - 87</md-option>
+					<md-option value="88-97">88 - 97</md-option>
+					</md-select>
+				</md-input-container>
+				 <div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+ </div>
+ </center>
+</div>
+            <div class="mdl-tabs__panel" id="tab5-panel">
+					<form name="userForm">
+					<div layout="row">
+				<div flex-gt-sm="43" flex="66">
+				<md-input-container>
+    <label>User ID</label>
+    <input type="number" name="userid" ng-model="userid" required md-maxlength="10" minlength="10">
+    <div ng-messages="userForm.userid.$error" ng-show="userForm.userid.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>
+  </div>
+  	<div flex-gt-sm="63" flex="66">
+				<div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+					</div>
+					</div>
+					</div>
+				<div layout="row">
+				<div flex-gt-sm="43" flex="66">
+				<md-input-container>
+    <label>Name</label>
+    <input type="text" name="idname" ng-model="idname" ng-disabled="true">
+     </md-input-container>
+	 </div>
+	 <div flex-gt-sm="43" flex="66">
+     <md-input-container>
+	<label>Blood Group</label>
+    <input type="text" name="idbloodgroup" ng-model="idbloodgroup" ng-disabled="true">
+  </md-input-container>
+  </div>	
+  </div>
+				<div layout="row">
+  <div flex-gt-sm="43" flex="66">
+     <md-input-container>
+	<label>D.O.B</label>
+    <input type="text" name="iddob" ng-model="iddob" ng-disabled="true">
+  </md-input-container>
+  </div>		
+  <div flex-gt-sm="43" flex="66">
+     <md-input-container>
+	<label>Address</label>
+    <textarea type="text" name="idaddress" ng-model="idaddress" ng-disabled="true"></textarea>
+  </md-input-container>
+  </div>		
+</div>  
+			</form>	
+			</div>
+            <div class="mdl-tabs__panel" id="tab6-panel">
+                  <form name="userForm" style="width:66%">
+					
+				<md-input-container>
+    <label>First Name</label>
+    <input type="text" name="fname" ng-model="fname" required md-maxlength="10" minlength="3">
+    <div ng-messages="userForm.fname.$error" ng-show="userForm.fname.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <label>Middle Name</label>
+    <input type="text" name="mname" ng-model="mname" md-maxlength="10" minlength="3">
+    <div ng-messages="userForm.mname.$error" ng-show="userForm.mname.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <label>Last Name</label>
+    <input type="text" name="lname" ng-model="lname" required md-maxlength="10" minlength="3">
+    <div ng-messages="userForm.lname.$error" ng-show="userForm.lname.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>	
+				<div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+					</div>
+					</div>
+        </div>
+    </div>
+
+  
+        </md-content>
+      </md-tab>
+      <md-tab label="Donate Organ">
+        <md-content class="md-padding">
+  <div class="mdl-tabs vertical-mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-grid mdl-grid--no-spacing">
+      <div class="mdl-cell mdl-cell--3-col">
+          <div class="mdl-tabs__tab-bar">
+             <span class="mdl-tabs__tab">
+                 <span class="hollow-circle"></span>
+                  Search By:
+             </span>
+			 <a href="#tab1-panel" class="mdl-tabs__tab is-active">
+                 <span class="hollow-circle"></span>
+                  Organ Name
+             </a>
+             <a href="#tab2-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  Location
+              </a>
+              <a href="#tab3-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  Blood Quality
+              </a>
+              <a href="#tab4-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  Age Group
+              </a>
+              <a href="#tab5-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  User ID
+              </a>
+              <a href="#tab6-panel" class="mdl-tabs__tab">
+                  <span class="hollow-circle"></span>
+                  Name
+              </a>
+         </div>
+       </div>
+	    <div class="mdl-cell mdl-cell--1-col">
+		</div>
+       <div class="mdl-cell mdl-cell--7-col">
+            <div class="mdl-tabs__panel is-active" id="tab1-panel" layout-sm="column" layout-align="center center" layout-wrap>
+				 <md-input-container>
+		<md-checkbox ng-model="isOrganname1" aria-label="Anti-Oxidants">
+			Organ 1
+				</md-checkbox>	
+					<md-checkbox ng-model="isOrganname2" aria-label="Platelets">
+					Organ 2
+				</md-checkbox>	
+				<md-checkbox ng-model="isOrganname3" aria-label="Other">
+				Organ 3
+			</md-checkbox>	
+				</md-input-container>
+				 <div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+					</div>	
+            </div>
+            <div class="mdl-tabs__panel" id="tab2-panel">
+                  <div layout="row">
+					<div flex-gt-sm="100" flex="200">
+						<img src="img.jpg" width="100%">			
+					</div>
+					<div flex-gt-sm="10" flex="4">
+					</div>
+					<div flex-gt-sm="2" flex="2">
+						 <md-divider class="vertical-divider"></md-divider>
+					</div>
+					<div flex-gt-sm="10" flex="4">
+					</div>
+					<div flex-gt-sm="100" flex="66">
+					<form name="locationForm">
+					<div ng-controller="SelectHeaderController" ng-cloak>
+  <div>
+					 <md-input-container>
+        <label>Organ Name</label>
+        <md-select required ng-model="selectedOrganName"
+                   md-on-close="clearSearchTerm()"
+                   data-md-container-class="selectdemoSelectHeader"
+                   multiple>
+          <md-select-header class="demo-select-header">
+            <input ng-model="searchTerm"
+                   type="search"
+                   placeholder="Search for a Organ Name.."
+                   class="demo-header-searchbox md-text">
+          </md-select-header>
+          <md-optgroup label="organname">
+            <md-option ng-value="organname" ng-repeat="organname in organnames |
+              filter:searchTerm">{{organname}}</md-option>
+          </md-optgroup>
+        </md-select>
+      </md-input-container>
+	  </div>
+	  </div>
+  <md-input-container>
+     <label>Country</label>
+        <md-select name="country" ng-model="country" required>
+          <md-option disabled>Select</md-option>
+          <md-option value="red">A</md-option>
+          <md-option value="blue">B</md-option>
+          <md-option value="green">C</md-option>
+        </md-select>
+        <div ng-messages="locationForm.country.$error">
+      <div ng-message="required">Country is required!</div>
+    </div>
+	 </md-input-container>
+	  <md-input-container>
+	<label>State</label>
+        <md-select name="state" ng-model="state" required>
+          <md-option disabled>Select</md-option>
+		  <md-option value="red">A</md-option>
+          <md-option value="blue">B</md-option>
+          <md-option value="green">C</md-option>
+        </md-select>  <div ng-messages="locationForm.state.$error">
+      <div ng-message="required">State is required!</div>
+    </div>
+	 </md-input-container>
+	  <md-input-container>
+							 <label>City</label>
+        <md-select name="city" ng-model="city" required>
+          <md-option disabled>Select</md-option>
+		  <md-option value="red">A</md-option>
+          <md-option value="blue">B</md-option>
+          <md-option value="green">C</md-option>
+        </md-select>  <div ng-messages="locationForm.city.$error">
+      <div ng-message="required">City is required!</div>
+    </div>
+	 </md-input-container>
+								<div layout="row" layout-align="end" flex>
+      <md-button ng-click="save()" class="md-raised">Search</md-button>
+    </div>
+						</form>
+					</div>
+				</div>
+            </div>
+            <div class="mdl-tabs__panel" id="tab3-panel">
+	  <div ng-controller="SelectHeaderController" class="md-padding" ng-cloak>
+  <div>
+     <div layout="row">
+      <md-input-container>
+		<md-checkbox ng-model="isAntiOxi" aria-label="Anti-Oxidants">
+	First
+</md-checkbox>
+		<md-checkbox ng-model="isPlate" aria-label="Platelets">
+  Second
+</md-checkbox>	
+		<md-checkbox ng-model="isOther" aria-label="Other">
+Third
+</md-checkbox>	
+      </md-input-container>
+ </div>
+ <div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+ </div>
+</div>
+</div>
+</div>
+            <div class="mdl-tabs__panel" id="tab4-panel">
+			<center>
+      <md-input-container style="width: 60%;">
+        <label>Age</label>
+        <md-select ng-model="age">
+					<md-option ng-disabled="true">Select</md-option>
+					<md-option value="18-27">18 - 27</md-option>
+					<md-option value="28-37">28 - 37</md-option>
+					<md-option value="38-47">38 - 47</md-option>
+					<md-option value="48-57">48 - 57</md-option>
+					<md-option value="58-67">58 - 67</md-option>
+					<md-option value="68-77">68 - 77</md-option>
+					<md-option value="78-87">78 - 87</md-option>
+					<md-option value="88-97">88 - 97</md-option>
+					</md-select>
+				</md-input-container>
+				 <div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+ </div>
+ </center>
+</div>
+            <div class="mdl-tabs__panel" id="tab5-panel">
+					<form name="userForm">
+					<div layout="row">
+				<div flex-gt-sm="43" flex="66">
+				<md-input-container>
+    <label>User ID</label>
+    <input type="number" name="userid" ng-model="userid" required md-maxlength="10" minlength="10">
+    <div ng-messages="userForm.userid.$error" ng-show="userForm.userid.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>
+  </div>
+  	<div flex-gt-sm="63" flex="66">
+				<div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+					</div>
+					</div>
+					</div>
+				<div layout="row">
+				<div flex-gt-sm="43" flex="66">
+				<md-input-container>
+    <label>Name</label>
+    <input type="text" name="idname" ng-model="idname" ng-disabled="true">
+     </md-input-container>
+	 </div>
+	 <div flex-gt-sm="43" flex="66">
+     <md-input-container>
+	<label>Donated Organs</label>
+    <input type="text" name="idbloodgroup" ng-model="idbloodgroup" ng-disabled="true">
+  </md-input-container>
+  </div>	
+  </div>
+				<div layout="row">
+  <div flex-gt-sm="43" flex="66">
+     <md-input-container>
+	<label>D.O.B</label>
+    <input type="text" name="iddob" ng-model="iddob" ng-disabled="true">
+  </md-input-container>
+  </div>		
+  <div flex-gt-sm="43" flex="66">
+     <md-input-container>
+	<label>Address</label>
+    <textarea type="text" name="idaddress" ng-model="idaddress" ng-disabled="true"></textarea>
+  </md-input-container>
+  </div>		
+</div>  
+			</form>	
+			</div>
+            <div class="mdl-tabs__panel" id="tab6-panel">
+                  <form name="userForm" style="width:66%">
+					
+				<md-input-container>
+    <label>First Name</label>
+    <input type="text" name="fname" ng-model="fname" required md-maxlength="10" minlength="3">
+    <div ng-messages="userForm.fname.$error" ng-show="userForm.fname.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <label>Middle Name</label>
+    <input type="text" name="mname" ng-model="mname" md-maxlength="10" minlength="3">
+    <div ng-messages="userForm.mname.$error" ng-show="userForm.mname.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>
+  <md-input-container>
+    <label>Last Name</label>
+    <input type="text" name="lname" ng-model="lname" required md-maxlength="10" minlength="3">
+    <div ng-messages="userForm.lname.$error" ng-show="userForm.lname.$dirty">
+      <div ng-message="required">This is required!</div>
+      <div ng-message="md-maxlength">That's too long!</div>
+      <div ng-message="minlength">That's too short!</div>
+    </div>
+  </md-input-container>	
+				<div ng-cloak>
+					<md-content>
+					 <md-button class="md-raised">Search</md-button>
+					</md-content>
+					</div>
+					</div>				
+			</form>	
+            </div>
+        </div>
+    </div>
+
+        </md-content>
+      </md-tab>
+	  
+	<!--<md-tab label="Sign In">
+        <md-content class="md-padding">
+		
+		</md-content>
+		</md-tab>
+		
+	  <md-tab label="Sign Up">
+        <md-content class="md-padding">
+		</md-content>
+		</md-tab>-->
+	  
+    </md-tabs>
+  </md-content>
+   
+   
+  
+</div>
+</div>
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js'></script>
+<script src='js/index.js'></script>
+ 
+  <script type="text/javascript">    
+    angular.module('BlankApp', ['ngMaterial']);
+  </script> 
+  
+</body>
+</html>
