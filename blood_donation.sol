@@ -1,7 +1,6 @@
 pragma solidity ^0.4.4;
 //contract to store blood donor details
 //by Manju Mohan
-import "github.com/ethereum/dapp-bin/library/stringUtils.sol";
 
 contract BloodRecord {
 
@@ -9,51 +8,51 @@ contract BloodRecord {
         uint64 uid;
         string datetime;
         string bloodgroup;
+        uint timestamp;
 
     }
 
     mapping(uint256 => Record) public records;
 
-   struct Donor {
+   struct Donorblood {
 
         uint64 uid;
         string donorname;
+        string birthdate;
+        string bloodquality;
         //should i add this ? - string bloodgroup;
         uint16 age;
         string gender;
         string state;
-        string district;
         string city;
-        string phc;
         string availability;
         uint64 phnum;
         uint128[] recindex;
 
     }
 
-     mapping(uint64 => Donor) public donor;
+     mapping(uint64 => Donorblood) public bdonor;
     
     function regBloodDonar(uint64 uid )public returns (bool) {
         
-        donor[uid].uid = uid;
+        bdonor[uid].uid = uid;
         return true;
     }
 
-    function updateDonor(uint64 uid,string donorname,string bloodgroup,uint16 age,string gender,string state,string district,string city,string phc,string availability,uint64 phnum)public returns(bool) {
+    function updateDonor(uint64 uid,string donorname,string birthdate,string bloodgroup,uint16 age,string gender,string state,string city,string availability,uint64 phnum)public returns(bool) {
         
-        donor[uid].donorname = donorname;
-       // donor[uid].bloodgroup = bloodgroup;
-        donor[uid].age = age;
-        donor[uid].gender = gender;
-        donor[uid].state = state;
-        donor[uid].district = district;
-        donor[uid].city = city;
-        donor[uid].phc = phc;
-        donor[uid].availability = availability;
-        donor[uid].phnum = phnum;
+        bdonor[uid].donorname = donorname;
+        bdonor[uid].birthdate = birthdate;
+        bdonor[uid].age = age;
+        bdonor[uid].gender = gender;
+        bdonor[uid].state = state;
+        bdonor[uid].city = city;
+        bdonor[uid].availability = availability;
+        bdonor[uid].phnum = phnum;
         return true;
     }
 
+/*
       function findbylocation(uint64 uid,string country,string state,string district,string city,string phc)public returns(bool) {
 
         if (StringUtils.equal(donor[uid].country,country)) {
@@ -102,24 +101,22 @@ contract BloodRecord {
           // return donor[uid];
          }
      }   
+*/
 
 function createRecord(uint64 uid,uint64 rid,string datetime,string bloodgroup)public returns (bool) {
         
         uint128 realrid = uid+rid;
         records[realrid].datetime = datetime;
         records[realrid].bloodgroup = bloodgroup;
-        donor[uid].recindex.push(realrid);
+        records[realrid].timestamp = now;
+        bdonor[uid].recindex.push(realrid);
         return true;       
     }  
-    //function getpatient(uint64 uid )public constant returns (Donor) {
-       //return donor[uid];
+
+    function getridfromuid(uint64 uid )public constant returns (uint128[]) {
+       return bdonor[uid].recindex;
        
-   // }
-   // function getrecords(uint64 uid )public constant returns (uint128[]) {
-    
-      // return donor[uid].recindex;
-       
-   // }
+     }
 
     function BloodRecord(string _greeting) public {  
         return; 
