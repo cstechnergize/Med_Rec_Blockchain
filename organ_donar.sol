@@ -15,6 +15,7 @@ contract Donorsol {
         uint64 uid;
         string name;
         string birthdate;
+        string sex;
         uint16 height;
         uint16 weight;
         string btype; 
@@ -27,10 +28,11 @@ contract Donorsol {
         d.uid = uniqueid;
         return true;
     }
-    function updateDonorDetails(uint64 uniqueid,string name,string birthdate,uint16 height,uint16 weight,string btype)public returns(bool) {
+    function updateDonorDetails(uint64 uniqueid,string name,string birthdate,string sex,uint16 height,uint16 weight,string btype)public returns(bool) {
         var d = donors[uniqueid];
         d.name = name;
         d.birthdate = birthdate;
+        d.sex = sex;
         d.height = height;
         d.weight = weight;
         d.btype = btype;
