@@ -4,7 +4,7 @@
     height: 50px;
     transition: 0.05s;
     font-size: 20px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     background-color: rgb(84,84,84);
     border-color: rgb(221,221,221);
 }
@@ -14,7 +14,7 @@
     transition: 0.05s;
     height: 50px;
     font-size: 30px;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     background-color: rgb(84,84,84);
     border-color: rgb(221,221,221);
 }
